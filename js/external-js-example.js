@@ -1,4 +1,4 @@
-"use strict"//Makes Javascript more strict
+"use strict";//Makes Javascript more strict
 
 const pi = 3.14;
 console.log(pi);
@@ -18,5 +18,5 @@ let confirmed = confirm("We have lunch at 12:30 today?");
 console.log(confirmed);
 
 // Prompt - A pop-up message to the user from javascript that asks for a text view
-let userString = promote("what is your favorite baseball team");
-console.log()
+let userString = prompt("what is your favorite baseball team");
+console.log(`The user entered: ${userString}`);
