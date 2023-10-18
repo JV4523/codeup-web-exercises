@@ -23,17 +23,19 @@
  */
 let color = prompt("What is your favorite color?").toLowerCase();
 // function analyzeColor(color){
-//     if(color === "blue"){
+//     if(color === 'blue'){
 //         return "blue is the color of the sky"
-//     }else if(color === "red"){
+//     }else if(color === 'red'){
 //         return "Strawberries are red"
+//     }else if (color === 'cyan'){
+//          return "I don't know anything about cyan"
 //     }else{
-//         return "I don't know anything about " + color;
-//     }
+//         return "This color is not defined within this function";
 // }
-// let result = analyzeColor(color);
-// console.log(result);
-// alert(result);
+// console.log(analyzeColor('blue'));
+// console.log(analyzeColor('red'));
+// console.log(analyzeColor('cyan'));
+// console.log(analyzeColor('yellow'));
 
 /*switch(analyzeColor) {
     case "blue":
@@ -62,34 +64,39 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-
-let r = analyzeColor(randomColor);
-console.log(r);
-alert(r);
+console.log(randomColor);
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-function analyzeColor (color){
-    switch(analyzeColor) {
+function analyzeColorSwitch (color){
+    switch(color) {
         case "blue":
-            return "blue is the color of the sky";
-            Break;
+           alert("blue is the color of the sky")
+            break;
         case "red":
-            return "Strawberries are red";
-            Break;
+            alert("Strawberries are red")
+            break;
+        case "cyan":
+            alert("I don't know anything about cyan")
+            break;
         default:
-            return "I don't know anything about " + color + "!";
-            Break;
+            alert("This color is not defined within this function")
+            break;
     }
 }
+console.log(analyzeColorSwitch(randomColor));
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+let uColor = prompt("Please tell me a color?").toLowerCase();
+alert(analyzeColorSwitch(uColor);
 
 /* ########################################################################## */
 
@@ -113,6 +120,26 @@ function analyzeColor (color){
  * return value.
  */
 
+function calculateTotal (lucky,total){
+    if (lucky === 0){
+        return total;
+    }else if (lucky === 1){
+        return total - (total * .10);
+    }else if (lucky === 2){
+        return total - (total * .25);
+    }else if (lucky === 3){
+        return total - (total * .35);
+    }else if (lucky === 4){
+        return total - (total * .50);
+    }else if (lucky === 5){
+        return 0
+    }
+}
+console.log(calculateTotal (1,100));
+console.log(calculateTotal (2,100));
+console.log(calculateTotal (3,100));
+console.log(calculateTotal (4,100));
+console.log(calculateTotal (5,100));
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -121,9 +148,12 @@ function analyzeColor (color){
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// const luckyNumber = Math.floor(Math.random() * 6);
-
+//Generate a random number between 0 and 6
+let luckyNumber = Math.floor(Math.random() * 6);
+let customerTotal = parseFloat(prompt("What is your total?"));
+alert("Your lucky number is: + customerTotal");
+alert("Your total before the discount is: + customerTotal");
+alert("Your total after the discount is: + customerTotal");
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
